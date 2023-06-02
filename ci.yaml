@@ -1,0 +1,13 @@
+params:
+  - "string(defaultValue: '/tmp', name: 'Directory')"
+  - "string(defaultValue: 'Dev', name: 'DEPLOY_ENV')"
+  - "choice(choices: ['opt1', 'opt2', 'opt3'], description: 'desc', name: 'bla')"
+stage:
+  - name: build
+    steps:
+    - name: "Step show version"
+      exec: 'sh "mvn -version"'
+    - name: "Step Verify"
+      exec: 'echo "mvn verify"'
+    - name: "Step hello world"
+      exec: 'archiveArtifacts artifacts: "*", followSymlinks: false'
