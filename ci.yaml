@@ -17,6 +17,6 @@ stage:
       - name: "CUSTOM STEP show version"
         exec: 'sh "mvn -version"'
       - name: "CUSTOM STEP clea install"
-        exec: 'mvn "clean install"'
+        exec: 'sh "mvn clean install"'
       - name: "CUSTOM STEP Verify"
         exec: 'echo "mvn verify"'
